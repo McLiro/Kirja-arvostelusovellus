@@ -1,0 +1,13 @@
+<hr>
+{% for review in reviews %}
+<i>Kirja:</i> {{ review[0] }}
+<p>
+    <i>Arvosana:</i> {{ review[1] }}
+</p>
+<p>
+    <i>Lähettäjä:</i> {{ review[2] }}
+</p>
+<i>Aika:</i> {{review[3].strftime("%Y-%m-%d %H:%M:%S") }}
+<hr>
+{% endfor %}
+<a href="/new">Uusi arvostelu</a> | <a href="/logout">Kirjaudu ulos</a>
