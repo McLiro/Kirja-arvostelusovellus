@@ -1,0 +1,20 @@
+<h2>Luo arvostelu:</h2>
+
+<form action="/create" method="post">
+    Kirja: <input type="text" name="username"> | Arvosana:
+    <select name="score">
+        <option value="1">★</option>
+        <option value="2">★★</option>
+        <option value="3">★★★</option>
+        <option value="4">★★★★</option>
+        <option value="5">★★★★★</option>
+    </select>
+    <p>
+        Arvostelu:
+        <br>
+        <textarea name="content" rows="10" cols="50"></textarea>
+    </p>
+    <p>
+        <input type="submit" value="Julkaise arvostelu">
+    </p>
+</form>

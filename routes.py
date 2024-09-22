@@ -1,5 +1,5 @@
 from app import app
-from flask import render_template, request, redirect
+from flask import render_template, request, redirect, url_for
 import reviews, users
 
 @app.route("/")
@@ -13,6 +13,18 @@ def index():
 @app.route("/new")
 def new():
     return render_template("new.html")
+
+@app.route("/create", methods=["POST"])
+def create():
+    title = request.form["title"]
+    content = request.form["content"]
+    score = request.form["score"]
+    id = reviews.new_review(title, content, score)
+    return redirect(url_for("review", id=id))
+
+@app.route("/review/<int:id>")
+def review(id):
+    pass
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
