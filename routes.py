@@ -24,7 +24,13 @@ def create():
 
 @app.route("/review/<int:id>")
 def review(id):
-    pass
+    review = reviews.get_review(id)[0]
+    title = review[0]
+    content = review[1]
+    score = review[2]
+    sent_at = review[3]
+    username = review[4]
+    return render_template("review.html", title=title, content=content, score=score, sent_at=sent_at, username=username)
 
 @app.route("/login", methods=["GET", "POST"])
 def login():

@@ -1,0 +1,22 @@
+<h2>{{ title }} |
+    {% if score == 1 %}
+    ★
+    {% elif score == 2 %}
+    ★★
+    {% elif score == 3 %}
+    ★★★
+    {% elif score == 4 %}
+    ★★★★
+    {% elif score == 5 %}
+    ★★★★★
+    {% endif %}
+</h2>
+<div>
+    <hr>
+    {{ content }}
+    <hr>
+</div>
+<br>
+{{ username }} | {{ sent_at.strftime("%Y-%m-%d %H:%M:%S") }}
+<br>
+<a href="/">Takaisin kotisivulle</a>
