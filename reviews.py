@@ -1,7 +1,8 @@
 from db import db
 import users
+from sqlalchemy.sql import text
 
 def get_list():
     sql = "SELECT R.title, R.score, U.username, R.sent_at FROM reviews R, users U WHERE R.user_id=U.id ORDER BY R.id"
-    result = db.session.execute(sql)
+    result = db.session.execute(text(sql))
     return result.fetchall()
