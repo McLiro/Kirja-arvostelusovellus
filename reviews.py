@@ -14,4 +14,4 @@ def new_review(title, content, score):
     sql = "INSERT INTO reviews (title, content, score, user_id, sent_at) VALUES (:title, :content, :score, :user_id, NOW()) RETURNING id"
     result = db.session.execute(text(sql), {"title":title, "content":content, "score":score, "user_id":user_id})
     db.session.commit()
-    return result.fetchone[0]
+    return result.fetchone()[0]
